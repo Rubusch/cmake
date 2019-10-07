@@ -23,8 +23,5 @@ include_directories ("${PROJECT_SOURCE_DIR}/include")
 ## add source directory
 ##add_subdirectory (src)
 
-## build an executable: executable name, then sources
+## build an executable: executable name, and link sources
 add_executable(main.exe main.cpp src/a.cpp)
-
-## link as library to the project
-target_link_libraries (Basic LibA)
