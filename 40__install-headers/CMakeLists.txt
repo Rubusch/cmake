@@ -1,10 +1,10 @@
 ## simple header
 ##
 ## build and run as follows:
-## $ mkdir build
-## $ cd build
+## $ mkdir build && cd build
 ## $ cmake -DCMAKE_INSTALL_PREFIX=./ ..
 ## $ make
+## $ make install
 ## $ ./main.exe
 ##
 ################################################################################
@@ -25,4 +25,4 @@ add_executable(main.exe main.cpp src/a.cpp)
 
 ## installer
 install (TARGETS main.exe DESTINATION bin)
-install (FILES a.h DESTINATION include)
+install (FILES include/a.h DESTINATION include)
