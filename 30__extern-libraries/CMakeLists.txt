@@ -26,7 +26,7 @@ configure_file (
 ## add explicitely a header directory
 include_directories("${PROJECT_BINARY_DIR}")
 
-## parse sub directory for LibA
+## parse sub directory for LibADir
 include_directories ("${PROJECT_SOURCE_DIR}/LibADir")
 add_subdirectory (LibADir)
 
