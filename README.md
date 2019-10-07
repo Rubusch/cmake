@@ -1,6 +1,6 @@
 # cmake
 
-demos for basic stuff in cmake, unsure if continued
+stuff in cmake - started out from thoughts around the common cmake tutorial publicly available, and some usages
 
 # Resource
 
