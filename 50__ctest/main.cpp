@@ -7,7 +7,7 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-  auto a = new A(atoi(argv[0]));
+  auto a = new A(atoi(argv[1]));
 
   delete a;
 
