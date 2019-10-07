@@ -17,13 +17,13 @@ int main()
 {
   cout << "version number, major: " << Basic_VERSION_MAJOR << ", minor: " << Basic_VERSION_MINOR << endl;
 
-#ifdef USE_MYMATH
+#ifdef USE_MYLIB
   auto a = new A();
 #endif
 
-  cout << "a created..." << endl;
+  cout << "Created a...?" << endl;
 
-#include "MathFunctions.h"
+#ifdef USE_MYLIB
   delete a;
 #endif
 

@@ -4,5 +4,5 @@
 #define Basic_VERSION_MAJOR @Basic_VERSION_MAJOR@
 #define Basic_VERSION_MINOR @Basic_VERSION_MINOR@
 
-// set flag to use optional library LibA
-#cmakedefine USE_MYMATH
+// set flag '1' to use optional library LibA, or leave unset
+#cmakedefine USE_MYLIB 1

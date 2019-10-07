@@ -34,7 +34,7 @@ option (USE_MYLIB
 ## define set in config.in.h
 if (USE_MYLIB)
   include_directories ("${PROJECT_SOURCE_DIR}/LibA")
-  add_subdirectory (MyLibAFunctions)
+  add_subdirectory (LibA)
   set (EXTRA_LIBS ${EXTRA_LIBS} MyLibAFunctions)
 endif (USE_MYLIB)
 
