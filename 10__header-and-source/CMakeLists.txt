@@ -18,4 +18,4 @@ set (Tutorial_VERSION_MAJOR 1)
 set (Tutorial_VERSION_MINOR 0)
 
 ## build an executable: executable name, then sources
-add_executable(main.exe main.cpp)
+add_executable(main.exe main.cpp a.cpp)
