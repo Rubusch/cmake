@@ -1,16 +1,15 @@
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
-#include "a.h"
+#include "config.h" /* generated, version number */
 
 using namespace std;
 
 int main()
 {
-  auto a = new A();
-
-  cout << "do ut des!" << endl;
-
-  delete a;
+  cout << "version number, major: " << Basic_VERSION_MAJOR << ", minor: " << (int)Basic_VERSION_MINOR << endl;
 
   return 0;
 }
