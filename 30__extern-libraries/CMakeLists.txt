@@ -26,5 +26,13 @@ configure_file (
 ## add explicitely a header directory
 include_directories("${PROJECT_BINARY_DIR}")
 
+## parse sub directory for LibA
+include_directories ("${PROJECT_SOURCE_DIR}/LibA")
+add_subdirectory (LibA)
+
 ## build an executable: executable name, then sources
 add_executable(main.exe main.cpp)
+
+## add LibA to the executable
+target_link_libraries (Tutorial MyLibFunctions)
+
