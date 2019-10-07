@@ -4,8 +4,6 @@ using namespace std;
 
 int main()
 {
-  cout << "do ut des!" << endl;
-
 #if defined (HAVE_LOG)
   cout << "log() is defined" << endl;
 #else
@@ -16,7 +14,7 @@ int main()
   cout << "exp() is defined" << endl;
 #else
   cout << "exp() is not defined" << endl;
-#endl
+#endif
 
   return 0;
 }
