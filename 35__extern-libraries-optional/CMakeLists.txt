@@ -17,27 +17,32 @@ project (Basic)
 set (Basic_VERSION_MAJOR 1)
 set (Basic_VERSION_MINOR 0)
 
+## parse sub directory for LibA (depending if source uses it or not)
+## NOTE: options need to be on top, or before they are used in cmake!!!
+option(USE_MYLIB "Use provided library" ON)
+
+## now go into the source
+
+## add explicitely a header directory
+include_directories("${PROJECT_BINARY_DIR}")
+
 ## obtain version number from sources
 configure_file (
   "${PROJECT_SOURCE_DIR}/config.h.in"
   "${PROJECT_BINARY_DIR}/config.h"
   )
 
-## add explicitely a header directory
-include_directories("${PROJECT_BINARY_DIR}")
-
-## parse sub directory for LibA (depending if source uses it or not)
-option (USE_MYLIB
-        "Use my provided library implementation" ON)
-
 ## set up a #define USE_MYLIB in CMakeLists.txt and in source,
 ## define set in config.in.h
 if (USE_MYLIB)
-  include_directories ("${PROJECT_SOURCE_DIR}/LibA")
-  add_subdirectory (LibA)
+  include_directories ("${PROJECT_SOURCE_DIR}/LibADir")
+  add_subdirectory (LibADir)
   set (EXTRA_LIBS ${EXTRA_LIBS} LibA)
 endif (USE_MYLIB)
 
-## build the executable 'main.exe': executable name, then sources
+## build the executable 'main.exe': executable name, then source
 add_executable(main.exe main.cpp)
 target_link_libraries (main.exe  ${EXTRA_LIBS})
+
+
+

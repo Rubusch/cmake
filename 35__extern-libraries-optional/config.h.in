@@ -5,4 +5,6 @@
 #define Basic_VERSION_MINOR @Basic_VERSION_MINOR@
 
 // set flag '1' to use optional library LibA, or leave unset
+// NOTE: make sure the 'option' is set before evaluation of the config.in.h,
+// where USE_MYLIB is set
 #cmakedefine USE_MYLIB 1
