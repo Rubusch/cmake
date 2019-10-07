@@ -5,7 +5,7 @@
 ## $ cmake -DCMAKE_INSTALL_PREFIX=./ ..
 ## $ make
 ## $ make install
-## $ ./main.exe
+## $ ./bin/main.exe
 ##
 ################################################################################
 
