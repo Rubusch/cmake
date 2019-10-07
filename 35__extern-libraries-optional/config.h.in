@@ -3,3 +3,6 @@
 // syntax: e.g. <project name>_VERSION_MAJOR
 #define Basic_VERSION_MAJOR @Basic_VERSION_MAJOR@
 #define Basic_VERSION_MINOR @Basic_VERSION_MINOR@
+
+// set flag to use optional library LibA
+#cmakedefine USE_MYMATH
