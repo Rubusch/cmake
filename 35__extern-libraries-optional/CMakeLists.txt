@@ -33,8 +33,8 @@ option (USE_MYLIB
 ## set up a #define USE_MYLIB in CMakeLists.txt and in source,
 ## define set in config.in.h
 if (USE_MYLIB)
-  include_directories ("${PROJECT_SOURCE_DIR}/LibADir")
-  add_subdirectory (LibADir)
+  include_directories ("${PROJECT_SOURCE_DIR}/LibA")
+  add_subdirectory (LibA)
   set (EXTRA_LIBS ${EXTRA_LIBS} LibA)
 endif (USE_MYLIB)
 
