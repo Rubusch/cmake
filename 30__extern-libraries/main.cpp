@@ -5,11 +5,20 @@
 
 #include "config.h" /* generated, version number */
 
+#include "a.h"
+
+
 using namespace std;
 
 int main()
 {
   cout << "version number, major: " << Basic_VERSION_MAJOR << ", minor: " << (int)Basic_VERSION_MINOR << endl;
+
+  auto a = new A();
+
+  cout << "a created..." << endl;
+
+  delete a;
 
   return 0;
 }
