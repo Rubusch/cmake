@@ -30,9 +30,9 @@ include_directories("${PROJECT_BINARY_DIR}")
 include_directories ("${PROJECT_SOURCE_DIR}/LibA")
 add_subdirectory (LibA)
 
-## build an executable: executable name, then sources
+## build the executable 'main.exe': executable name, then sources
 add_executable(main.exe main.cpp)
 
-## add LibA to the executable
-target_link_libraries (Tutorial MyLibFunctions)
+## add LibA to the executable 'main.exe'
+target_link_libraries (main.exe MyLibAFunctions)
 

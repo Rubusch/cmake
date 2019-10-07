@@ -1,2 +1,2 @@
 ## sub CMakeLists.txt
-add_library(MyLibFunctions a.cpp)
+add_library(MyLibAFunctions a.cpp)
