@@ -3,7 +3,7 @@
 ## build and run as follows:
 ## $ mkdir build
 ## $ cd build
-## $ cmake ../
+## $ cmake ..
 ## $ make
 ## $ ./main.exe
 ##
@@ -14,8 +14,8 @@ cmake_minimum_required (VERSION 2.6)
 project (Basic)
 
 ## (opt) version number
-set (Tutorial_VERSION_MAJOR 1)
-set (Tutorial_VERSION_MINOR 0)
+set (Basic_VERSION_MAJOR 1)
+set (Basic_VERSION_MINOR 0)
 
 ## build an executable: executable name, then sources
 add_executable(main.exe main.cpp)

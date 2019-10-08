@@ -3,7 +3,7 @@
 ## build and run as follows:
 ## $ mkdir build
 ## $ cd build
-## $ cmake ../
+## $ cmake ..
 ## $ make
 ## $ ./main.exe
 ##

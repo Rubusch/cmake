@@ -60,8 +60,8 @@ do_test(10 "70")
 
 
 ## (opt) version number
-set(Tutorial_VERSION_MAJOR 1)
-set(Tutorial_VERSION_MINOR 0)
+set(Basic_VERSION_MAJOR 1)
+set(Basic_VERSION_MINOR 0)
 
 ## 3. includes
 ## add top level of include directories
