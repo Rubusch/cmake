@@ -15,8 +15,8 @@ add_custom_command (
 include_directories( ${CMAKE_CURRENT_BINARY_DIR} )
 
 ## add the main library
-add_library(Basic ${CMAKE_CURRENT_BINARY_DIR}/Table.h)  
+add_library(LibA ${CMAKE_CURRENT_BINARY_DIR}/a.h)  
 
 ## installer
-install (TARGETS generator.exe DESTINATION bin)
-#install (FILES a.h DESTINATION include) # the 'a.h' install is optional, just to demonstrate..
+install (TARGETS LibA DESTINATION bin)
+install (FILES a.h DESTINATION include) # the 'a.h' install is optional, just to demoesnstrate..
