@@ -38,28 +38,30 @@ set(CMAKE_CXX_STANDARD 11) # use C++11
 project(ChuckNorris)
 
 
+## libraries: sqlite3 (third party - IMPORTED)
+##
+## IMPORTED_LOCATION:              path to the lib.a file
+## INTERFACE_INCLUDE_DIRECTORIES:  path to the sqlite3.h file(s)
+add_library( sqlite3 STATIC IMPORTED)
+set_target_properties( sqlite3
+  PROPERTIES
+  IMPORTED_LOCATION /usr/lib/x86_64-linux-gnu/libsqlite3.a
+  INTERFACE_INCLUDE_DIRECTORIES /usr/include
+)
+
+
 ## libraries: chucknorrisLib
 add_library( chucknorrisLib
   include/ChuckNorris.h
   src/ChuckNorris.cpp
 )
-
-
-## public includes for library: chucknorrisLib
-##
-## PRIVATE:   use the headers only for the specified target
-## INTERFACE: use the headers only for the target's clients
-## PUBLIC:    use the headers for the specified target and the target's clients
 target_include_directories( chucknorrisLib
   PUBLIC "include"
 )
 
+## build: lib with third party library
+target_link_libraries(chucknorrisLib sqlite3)
 
 ## build: chuck.exe
-add_executable(chuck.exe
-  src/main.cpp
-)
-
-
-## link: chuck.exe and lib
+add_executable(chuck.exe src/main.cpp)
 target_link_libraries(chuck.exe chucknorrisLib)
