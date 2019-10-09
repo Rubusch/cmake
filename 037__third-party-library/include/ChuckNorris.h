@@ -10,10 +10,11 @@
 #include <string>
 #include <sqlite3.h>
 
+
 class ChuckNorris
 {
 public:
-  ChuckNorris() = default;
+  ChuckNorris();
   ChuckNorris(ChuckNorris const&) = delete;
   ChuckNorris(ChuckNorris &&) = delete;
   ChuckNorris& operator=(ChuckNorris const&) = delete;
@@ -23,5 +24,5 @@ public:
   std::string getFact();
 
 private:
-  sqlite3* _db;
+  sqlite3* db_;
 };

@@ -7,14 +7,14 @@
  */
 
 
-#include <ChuckNorris.h>
+#include "ChuckNorris.h"
 
 #include <sqlite3.h>
 
 
 ChuckNorris::ChuckNorris()
 {
-  sqlite3_open(":memory:", &_db);
+  sqlite3_open(":memory:", &db_);
 
   auto const sql = R"(
 CREATE TABLE chucknorris(id PRIMARY_KEY, fact VARCHAR(500));
@@ -25,12 +25,12 @@ INSERT INTO chucknorris (fact) VALUES
   ...
   )";
 
-  auto res = sqlite3_exec(db, sql, 0, 0, nullptr);
+  auto res = sqlite3_exec(db_, sql, 0, 0, nullptr);
 }
 
 ChuckNorris::~ChuckNorris()
 {
-  sqlite3_close(_db);
+  sqlite3_close(db_);
 }
 
 std::string ChuckNorris::getFact()
@@ -39,7 +39,7 @@ std::string ChuckNorris::getFact()
 
   sqlite3_stmt* statement;
   int rc;
-  rc = sqlite3_prepare_v2(_db,
+  rc = sqlite3_prepare_v2(db_,
                           R"(SELECT fact FROM chucknorris ORDER BY RANDOM() LIMIT 1;)",
                           -1, &statement, 0);
 /*

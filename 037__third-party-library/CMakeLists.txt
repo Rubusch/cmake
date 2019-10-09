@@ -38,20 +38,30 @@ set(CMAKE_CXX_STANDARD 11) # use C++11
 project(ChuckNorris)
 
 
+
+
 ## libraries: sqlite3 (third party - IMPORTED)
 ##
 ## IMPORTED_LOCATION:              path to the lib.a file
 ## INTERFACE_INCLUDE_DIRECTORIES:  path to the sqlite3.h file(s)
-add_library( sqlite3 STATIC IMPORTED)
-set_target_properties( sqlite3
+add_library(sqlite3 STATIC IMPORTED)
+set_target_properties(sqlite3
   PROPERTIES
   IMPORTED_LOCATION /usr/lib/x86_64-linux-gnu/libsqlite3.a
   INTERFACE_INCLUDE_DIRECTORIES /usr/include
 )
+## provider linker information for also linking against 'pthread' and 'dl'
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+  set_target_properties(sqlite3
+    PROPERTIES
+      INTERFACE_LINK_LIBRARIES "dl;pthread"
+   )
+endif()
+
 
 
 ## libraries: chucknorrisLib
-add_library( chucknorrisLib
+add_library(chucknorrisLib
   include/ChuckNorris.h
   src/ChuckNorris.cpp
 )
