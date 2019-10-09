@@ -5,7 +5,7 @@
 
   author: Lothar Rubusch
  */
-#include <ChuckNorris.hpp>
+#include <ChuckNorris.h>
 #include <iostream>
 
 using namespace std;

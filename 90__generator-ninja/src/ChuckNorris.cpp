@@ -7,7 +7,7 @@
  */
 
 
-#include <ChuckNorris.hpp>
+#include <ChuckNorris.h>
 
 std::string ChuckNorris::getFact()
 {
