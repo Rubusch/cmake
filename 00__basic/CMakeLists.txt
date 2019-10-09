@@ -7,6 +7,17 @@
 ## $ make
 ## $ ./main.exe
 ##
+## alternative use ninja to build
+## $ mkdir build
+## $ cd build
+## $ cmake -GNinja ..
+## $ ninja
+## $ ./main.exe
+##
+## or
+## $ alias banzai='mkdir build && cd build && cmake -GNinja .. && ninja && ./main.exe'
+## $ banzai
+##
 ################################################################################
 
 ## Basic
