@@ -30,8 +30,7 @@
 ##
 ##  https://dmerej.info/blog/post/chuck-norris-part-1-cmake-ninja
 ##  original example by Dimitri Merejkowsky
-##
-##  author: Lothar Rubusch
+
 
 cmake_minimum_required(VERSION 3.10)
 set(CMAKE_CXX_STANDARD 11) # use C++11
