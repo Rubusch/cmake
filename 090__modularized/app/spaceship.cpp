@@ -16,7 +16,9 @@ int main()
   auto screen = new Display();
   auto radar = new Navigation();
 
-  delete engine screen radar;
+  delete engine;
+  delete screen;
+  delete radar;
   cout << "READY." << endl;
   return 0;
 }

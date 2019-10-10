@@ -1,9 +1,9 @@
 ##
 ## in the source directory execute the following commands
-## $ export PREFIX="$(pwd)/install"
+## $ export PREFIX="$(pwd)"
 ## $ mkdir install
 ## $ mkdir build
-## $ cmake -B $(pwd)/build -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_PREFIX_PATH=${PREFIX} -S $(pwd)
+## $ cmake -B $(pwd)/build -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX}/install -DCMAKE_PREFIX_PATH=${PREFIX}/build -S ..
 ## $ ninja
 ## $ ./spaceship.exe
 ##
@@ -18,12 +18,23 @@ add_subdirectory(engine_lib)
 add_subdirectory(display_lib)
 add_subdirectory(navigation_lib)
 
+
 add_executable(spaceship.exe
   app/spaceship.cpp
 )
 
+
+## includes
+include_directories ("${PROJECT_BINARY_DIR}/include")
+
+
+## link libraries .a or .so
 target_link_libraries(spaceship.exe
   libdisplay
   libengine
   libnavigation
 )
+
+
+## install
+install(TARGETS spaceship.exe DESTINATION bin)

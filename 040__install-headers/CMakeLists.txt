@@ -18,7 +18,7 @@ set (Basic_VERSION_MAJOR 1)
 set (Basic_VERSION_MINOR 0)
 
 ## add top level of include directories
-include_directories ("${PROJECT_SOURCE_DIR}/include")
+include_directories("${PROJECT_SOURCE_DIR}/include")
 
 ## build an executable: executable name, and link sources
 add_executable(main.exe main.cpp src/a.cpp)

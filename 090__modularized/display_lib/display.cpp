@@ -6,11 +6,11 @@
 Display::Display()
 : en_(new Engine())
 {
-  std::cout << "Display!" << std::endl;
+  std::cout << "Build Display!" << std::endl;
 }
 
 Display::~Display()
 {
-  std::cout << "Display::selfdestruction" << std::endl;
+  std::cout << "ALERT!!! Selfdestruction  ..,o0O@@#*'`  " << std::endl;
   delete en_;
 }

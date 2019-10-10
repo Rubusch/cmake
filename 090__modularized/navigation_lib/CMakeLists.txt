@@ -10,12 +10,14 @@ add_library(Spaceship::libnavigation ALIAS libnavigation)
 
 
 ## includes
-list(APPEND PRIVATE_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/internal)
-target_include_directories(libnavigation
-  PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-  $<INSTALL_INTERFACE:include>
-  PRIVATE "${PRIVATE_INCLUDE_DIRS}"
-)
+include_directories("${PROJECT_SOURCE_DIR}/include")
+
+# list(APPEND PRIVATE_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/internal)
+# target_include_directories(libnavigation
+#   PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+#   $<INSTALL_INTERFACE:include>
+#   PRIVATE "${PRIVATE_INCLUDE_DIRS}"
+# )
 
 
 ## headers
