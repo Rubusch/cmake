@@ -13,19 +13,19 @@
 ##
 ## $ mkdir build && cd build
 ## $ export PREFIX="$(pwd)"
-## $ cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX}/install ../display_lib
+## $ cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX} ../engine_lib
 ## $ ninja
 ## $ ninja install
 ## $ rm CMakeCache.txt
-## $ cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX}/install ../engine_lib
+## $ cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX} ../display_lib
 ## $ ninja
 ## $ ninja install
 ## $ rm CMakeCache.txt
-## $ cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX}/install ../navigation_lib
+## $ cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX} ../navigation_lib
 ## $ ninja
 ## $ ninja install
 ## $ rm CMakeCache.txt
-## $ cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX}/install ..
+## $ cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX} ..
 ## $ ninja
 ## $ ninja install
 ## $ ./bin/spaceship.exe
@@ -57,7 +57,7 @@ add_executable(spaceship.exe
 
 
 ## includes
-include_directories ("${PROJECT_BINARY_DIR}/include")
+include_directories("${PROJECT_BINARY_DIR}/include")
 
 
 ## link libraries .a or .so
