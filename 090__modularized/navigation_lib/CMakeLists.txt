@@ -1,7 +1,13 @@
 cmake_minimum_required(VERSION 3.9)
 project(libnavigation)
 
+
+## library
+add_library(libnavigation
+  src/navigation.cpp
+)
 add_library(Spaceship::libnavigation ALIAS libnavigation)
+
 
 ## includes
 list(APPEND PRIVATE_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/internal)
@@ -11,18 +17,15 @@ target_include_directories(libnavigation
   PRIVATE "${PRIVATE_INCLUDE_DIRS}"
 )
 
-## TODO
-target_link_libraries(libnavigation src/navigation.cpp)
 
-
-## exported headers
+## headers
 list(APPEND NAVIGATIONLIB_PUBLIC_HEADER "include/navigation.h")
 ##...
 set_target_properties(libnavigation PROPERTIES
   PUBLIC_HEADER "${NAVIGATIONLIB_PUBLIC_HEADER}"
 )
 
-## install
+## install & export
 install(TARGETS libnavigation EXPORT libnavigationConfig
   RUNTIME DESTINATION bin
   LIBRARY DESTINATION bin
