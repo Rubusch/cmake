@@ -26,10 +26,11 @@ set_target_properties(libengine PROPERTIES
 
 
 ## install & export
-#install(TARGETS libengine EXPORT libengineConfig
-#  RUNTIME DESTINATION bin
-#  LIBRARY DESTINATION bin
-#  PUBLIC_HEADER DESTINATION include
-#)
+install(TARGETS libengine EXPORT libengineConfig
+  RUNTIME DESTINATION bin
+  LIBRARY DESTINATION bin
+  ARCHIVE DESTINATION lib
+  PUBLIC_HEADER DESTINATION include
+)
 ## export name 'libengine' via 'libengineConfig'
 install(EXPORT libengineConfig NAMESPACE Spaceship:: DESTINATION cmake)

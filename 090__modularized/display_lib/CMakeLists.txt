@@ -6,7 +6,7 @@ project(libdisplay)
 #  Target "libdisplay" links to target "Spaceship::libEngine" but the target
 #  was not found.  Perhaps a find_package() call is missing for an IMPORTED
 #  target, or an ALIAS target is missing?
-find_package(libdisplay CONFIG REQUIRED)
+find_package(libengine CONFIG REQUIRED)
 
 
 ## copy xml file to destination
