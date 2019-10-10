@@ -1,5 +1,37 @@
 ##
-## in the source directory execute the following commands
+## dependencies:
+##
+## engine --------------.
+##        \              \
+##         '--> display --o===> spaceship.exe
+##                       /
+##         navigation --'
+##
+##
+##
+## in a first approach build it modularized
+##
+## $ mkdir build && cd build
+## $ export PREFIX="$(pwd)"
+## $ cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX}/install ../display_lib
+## $ ninja
+## $ ninja install
+## $ rm CMakeCache.txt
+## $ cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX}/install ../engine_lib
+## $ ninja
+## $ ninja install
+## $ rm CMakeCache.txt
+## $ cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX}/install ../navigation_lib
+## $ ninja
+## $ ninja install
+## $ rm CMakeCache.txt
+## $ cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX}/install ..
+## $ ninja
+## $ ninja install
+## $ ./bin/spaceship.exe
+##
+##
+## FIXME: build topdown - in the source directory execute the following commands
 ## $ export PREFIX="$(pwd)"
 ## $ mkdir install
 ## $ mkdir build
