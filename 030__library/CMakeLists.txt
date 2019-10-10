@@ -35,4 +35,3 @@ add_executable(main.exe main.cpp)
 
 ## add LibA to the executable 'main.exe'
 target_link_libraries (main.exe LibA)
-

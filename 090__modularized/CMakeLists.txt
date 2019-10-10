@@ -8,7 +8,12 @@ add_subdirectory(engine_lib)
 add_subdirectory(display_lib)
 add_subdirectory(navigation_lib)
 
+add_executable(spaceship.exe
+  app/spaceship.cpp
+)
 
-
-# TODO
-# app/main.c
+target_link_libraries(spaceship.exe
+  libdisplay
+  libengine
+  libnavigation
+)
