@@ -8,6 +8,7 @@ class Display
 {
 public:
   Display();
+  ~Display();
 
 private:
   Engine *en_;

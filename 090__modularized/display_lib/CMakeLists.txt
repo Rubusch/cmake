@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.9)
 project(libdisplay)
 
 #CMake Error at display_lib/CMakeLists.txt:14 (add_library):
-#  Target "libdisplay" links to target "Spaceship::libEngine" but the target
+#  Target "libdisplay" links to target "Spaceship::libengine" but the target
 #  was not found.  Perhaps a find_package() call is missing for an IMPORTED
 #  target, or an ALIAS target is missing?
 find_package(libengine CONFIG REQUIRED)
@@ -31,7 +31,7 @@ target_include_directories(libdisplay
 
 
 ## link other library 'libengine' to this library
-target_link_libraries(libdisplay Spaceship::libEngine)
+target_link_libraries(libdisplay Spaceship::libengine)
 
 
 ## headers

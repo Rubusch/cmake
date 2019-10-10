@@ -4,7 +4,7 @@
 
 
 Display::Display()
-*en_(new Engine())
+: en_(new Engine())
 {
   std::cout << "Display!" << std::endl;
 }
@@ -12,5 +12,5 @@ Display::Display()
 Display::~Display()
 {
   std::cout << "Display::selfdestruction" << std::endl;
-  delete *en_;
+  delete en_;
 }
