@@ -1,6 +1,9 @@
+##
+## in the source directory execute the following commands
+## $ export PREFIX="$(pwd)/install"
+## $ mkdir install
 ## $ mkdir build
-## $ cd build
-## $ cmake -GNinja CMAKE_PREFIX_PATH=./install ..
+## $ cmake -B $(pwd)/build -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_PREFIX_PATH=${PREFIX} -S $(pwd)
 ## $ ninja
 ## $ ./spaceship.exe
 ##
