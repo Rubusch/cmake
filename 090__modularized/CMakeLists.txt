@@ -30,6 +30,12 @@
 ## $ ninja install
 ## $ ./bin/spaceship.exe
 ##
+## # FIXME
+## $ mkdir build && cd build
+## $ export PREFIX="$(pwd)"
+## $ cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX} ..
+## $ ninja
+## $ ninja install
 ##
 ## FIXME: build topdown - in the source directory execute the following commands
 ## $ export PREFIX="$(pwd)"
@@ -46,8 +52,15 @@ cmake_minimum_required(VERSION 3.9)
 project(Spaceship VERSION 1.0.1 DESCRIPTION "my spaceship builder")
 ## set PROJECT_NAME, PROJECT_VERSION and PROJECT_DESCRIPTION
 
+include_directories("${PROJECT_BINARY_DIR}")
+
+include_directories("${PROJECT_BINARY_DIR}/engine_lib")
 add_subdirectory(engine_lib)
+
+include_directories("${PROJECT_BINARY_DIR}/display_lib")
 add_subdirectory(display_lib)
+
+include_directories("${PROJECT_BINARY_DIR}/navigation_lib")
 add_subdirectory(navigation_lib)
 
 
@@ -57,7 +70,7 @@ add_executable(spaceship.exe
 
 
 ## includes
-include_directories("${PROJECT_BINARY_DIR}/include")
+include_directories("${PROJECT_BINARY_DIR}/include") # TODO rm
 
 
 ## link libraries .a or .so
