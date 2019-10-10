@@ -32,4 +32,5 @@ install(TARGETS libnavigation EXPORT libnavigationConfig
   ARCHIVE DESTINATION lib ## static lib
   PUBLIC_HEADER DESTINATION include
 )
+install(FILES include/navigation.h DESTINATION include)
 install(EXPORT libnavigationConfig NAMESPACE Spaceship:: DESTINATION cmake)
