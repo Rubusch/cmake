@@ -29,6 +29,7 @@ set_target_properties(libnavigation PROPERTIES
 install(TARGETS libnavigation EXPORT libnavigationConfig
   RUNTIME DESTINATION bin
   LIBRARY DESTINATION bin
+  ARCHIVE DESTINATION lib ## static lib
   PUBLIC_HEADER DESTINATION include
 )
 install(EXPORT libnavigationConfig NAMESPACE Spaceship:: DESTINATION cmake)

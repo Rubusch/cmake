@@ -2,8 +2,11 @@ cmake_minimum_required(VERSION 3.9)
 
 project(libdisplay)
 
-
-# TODO find_package(libengine CONFIG REQUIRED)
+#CMake Error at display_lib/CMakeLists.txt:14 (add_library):
+#  Target "libdisplay" links to target "Spaceship::libEngine" but the target
+#  was not found.  Perhaps a find_package() call is missing for an IMPORTED
+#  target, or an ALIAS target is missing?
+find_package(libdisplay CONFIG REQUIRED)
 
 
 ## copy xml file to destination
@@ -12,10 +15,10 @@ configure_file(display.xml etc/display.xml COPYONLY)
 
 ## 'libdisplay' needs the 'libengine' at link time
 add_library(libdisplay
-  libengine
   display.cpp
+#  libengine
 )
-addLibrary(Spaceship::libdisplay ALIAS libdisplay)
+add_library(Spaceship::libdisplay ALIAS libdisplay)
 
 
 ## includes (opt at particular ones on top level)
@@ -44,6 +47,7 @@ install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/etc DESTINATION install)
 install(TARGETS libdisplay EXPORT libdisplayConfig
   RUNTIME DESTINATION bin
   LIBRARY DESTINATION bin
+  ARCHIVE DESTINATION lib # needed for static lib
   PUBLIC_HEADER DESTINATION include
 )
 ## export name 'libdisplay' via 'libdisplayConfig'

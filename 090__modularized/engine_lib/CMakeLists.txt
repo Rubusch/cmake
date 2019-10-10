@@ -20,16 +20,16 @@ target_include_directories(libengine
 ## headers
 list(APPEND ENGINELIB_PUBLIC_HEADER "engine.h")
 ##...
-set_target_properties(libnavigation PROPERTIES
+set_target_properties(libengine PROPERTIES
   PUBLIC_HEADER "${ENGINELIB_PUBLIC_HEADER}"
 )
 
 
 ## install & export
-install(TARGETS libengine EXPORT libengineConfig
-  RUNTIME DESTINATION bin
-  LIBRARY DESTINATION bin
-  PUBLIC_HEADER DESTINATION include
-)
+#install(TARGETS libengine EXPORT libengineConfig
+#  RUNTIME DESTINATION bin
+#  LIBRARY DESTINATION bin
+#  PUBLIC_HEADER DESTINATION include
+#)
 ## export name 'libengine' via 'libengineConfig'
 install(EXPORT libengineConfig NAMESPACE Spaceship:: DESTINATION cmake)

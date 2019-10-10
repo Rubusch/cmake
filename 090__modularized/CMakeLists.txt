@@ -1,4 +1,8 @@
-##
+## $ mkdir build
+## $ cd build
+## $ cmake -GNinja CMAKE_PREFIX_PATH=./install ..
+## $ ninja
+## $ ./spaceship.exe
 ##
 cmake_minimum_required(VERSION 3.9)
 project(Spaceship VERSION 1.0.1 DESCRIPTION "my spaceship builder")
