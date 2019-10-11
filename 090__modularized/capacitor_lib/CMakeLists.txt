@@ -5,8 +5,8 @@ project(libcapacitor)
 ## in order to provide the headers already at build time, either
 ## implement an additional -If interface (general component usage),
 ## or setup properties (individual usage)
-add_library(libcapacitorIf INTERFACE)
-add_library(Spaceship::libcapacitorIf ALIAS libcapacitorIf)
+#add_library(libcapacitorIf INTERFACE)
+#add_library(Spaceship::libcapacitorIf ALIAS libcapacitorIf)
 
 
 ## library
@@ -36,6 +36,6 @@ install(EXPORT libcapacitorConfig NAMESPACE Spaceship:: DESTINATION cmake)
 install(FILES ${LIBCAPACITOR_PUBLIC_HEADERS} DESTINATION include)
 
 ## install/export, interface
-install(TARGETS libcapacitorIf EXPORT libcapacitorIfConfig)
-install(EXPORT libcapacitorIfConfig NAMESPACE Spaceship:: DESTINATION cmake)
+#install(TARGETS libcapacitorIf EXPORT libcapacitorIfConfig)
+#install(EXPORT libcapacitorIfConfig NAMESPACE Spaceship:: DESTINATION cmake)
 

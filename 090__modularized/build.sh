@@ -12,6 +12,8 @@ echo $WHERE
 test -z "${WHERE}" && die "script location was / ??!!!"
 
 
+## shared library: -DCMAKE_TOOLCHAIN_FILE=${WHERE}/cmake/toolchain.cmake
+
 ## build top-down
 test -d "${WHERE}/build" && rm -rf "${WHERE}/build"
 mkdir "${WHERE}/build"

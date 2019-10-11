@@ -52,6 +52,7 @@ cmake_minimum_required(VERSION 3.9)
 project(Spaceship VERSION 1.0.1 DESCRIPTION "my spaceship builder")
 ## set PROJECT_NAME, PROJECT_VERSION and PROJECT_DESCRIPTION
 
+
 add_subdirectory(capacitor_lib)
 add_subdirectory(warp_lib)
 add_subdirectory(navigation_lib)
@@ -60,11 +61,6 @@ add_subdirectory(navigation_lib)
 add_executable(spaceship.exe
   app/spaceship.cpp
 )
-
-
-## includes
-#include_directories("${PROJECT_BINARY_DIR}")
-include_directories("${PROJECT_BINARY_DIR}/include") # TODO rm ?
 
 
 ## link libraries .a or .so
