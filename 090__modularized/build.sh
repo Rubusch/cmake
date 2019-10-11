@@ -12,10 +12,7 @@ echo $WHERE
 test -z "${WHERE}" && die "script location was / ??!!!"
 
 
-## shared library: -DCMAKE_TOOLCHAIN_FILE=${WHERE}/cmake/toolchain.cmake
-
-
-## build top-down
+## build top down
 test -d "${WHERE}/build" && rm -rf "${WHERE}/build"
 mkdir "${WHERE}/build"
 pushd $WHERE/build &> /dev/null
@@ -40,7 +37,7 @@ popd &> /dev/null
 
 sleep 1
 
-## build piece by piece...
+## build bottom up...
 test -d "${WHERE}/build" && rm -rf "${WHERE}/build"
 mkdir "${WHERE}/build"
 pushd $WHERE/build &> /dev/null
