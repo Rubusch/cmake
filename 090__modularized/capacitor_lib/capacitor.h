@@ -2,8 +2,8 @@
 
 #include <iostream>
 
-class Engine
+class Capacitor
 {
 public:
-  Engine();
+  Capacitor();
 };

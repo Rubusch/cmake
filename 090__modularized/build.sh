@@ -27,7 +27,7 @@ ninja install
 # mkdir "${WHERE}/build"
 # pushd $WHERE/build &> /dev/null
 # export PREFIX="$(pwd)"
-# cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX} ../engine_lib
+# cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX} ../capacitor_lib
 # ninja
 # ninja install
 # rm CMakeCache.txt

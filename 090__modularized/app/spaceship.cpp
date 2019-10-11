@@ -1,7 +1,7 @@
 /*
  */
 
-#include "engine.h"
+#include "capacitor.h"
 #include "display.h"
 #include "navigation.h"
 
@@ -12,11 +12,11 @@ using namespace std;
 
 int main()
 {
-  auto engine = new Engine();
+  auto capacitor = new Capacitor();
   auto screen = new Display();
   auto radar = new Navigation();
 
-  delete engine;
+  delete capacitor;
   delete screen;
   delete radar;
   cout << "READY." << endl;
