@@ -54,13 +54,16 @@ project(Spaceship VERSION 1.0.1 DESCRIPTION "my spaceship builder")
 
 include_directories("${PROJECT_BINARY_DIR}")
 
-include_directories("${PROJECT_BINARY_DIR}/engine_lib")
+# TODO install headers
+#include_directories("${PROJECT_BINARY_DIR}/engine_lib")
 add_subdirectory(engine_lib)
 
-include_directories("${PROJECT_BINARY_DIR}/display_lib")
+
+#include_directories("${PROJECT_BINARY_DIR}/display_lib")
 add_subdirectory(display_lib)
 
-include_directories("${PROJECT_BINARY_DIR}/navigation_lib")
+
+#include_directories("${PROJECT_BINARY_DIR}/navigation_lib")
 add_subdirectory(navigation_lib)
 
 
@@ -70,14 +73,15 @@ add_executable(spaceship.exe
 
 
 ## includes
-include_directories("${PROJECT_BINARY_DIR}/include") # TODO rm
+include_directories("${PROJECT_BINARY_DIR}/include") # TODO rm ?
 
 
 ## link libraries .a or .so
 target_link_libraries(spaceship.exe
-  libdisplay
   libengine
+  libdisplay
   libnavigation
+  spaceship
 )
 
 

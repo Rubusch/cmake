@@ -1,1 +1,1 @@
-## TODO implement to decouple and let the modules being installed 
+add_library(spaceship spaceship.cpp)
