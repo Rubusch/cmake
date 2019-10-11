@@ -6,7 +6,8 @@ project(libdisplay)
 #  Target "libdisplay" links to target "Spaceship::libengine" but the target
 #  was not found.  Perhaps a find_package() call is missing for an IMPORTED
 #  target, or an ALIAS target is missing?
-#find_package(libengine CONFIG REQUIRED)
+# FIXME                
+find_package(libengineIf CONFIG QUIET)
 
 
 ## copy xml file to destination
@@ -16,7 +17,6 @@ configure_file(display.xml etc/display.xml COPYONLY)
 ## 'libdisplay' needs the 'libengine' at link time
 add_library(libdisplay
   display.cpp
-#  libengine
 )
 add_library(Spaceship::libdisplay ALIAS libdisplay)
 
@@ -31,7 +31,10 @@ target_include_directories(libdisplay
 
 
 ## link other library 'libengine' to this library
-target_link_libraries(libdisplay Spaceship::libengine)
+## connect dependencies here
+target_link_libraries(libdisplay
+  Spaceship::libengine
+)
 
 
 ## headers
