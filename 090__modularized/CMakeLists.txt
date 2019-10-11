@@ -1,9 +1,9 @@
 ##
 ## dependencies:
 ##
-## capacitor --------------.
+## capacitor --- 1x ----.
 ##        \              \
-##         '--> display --o===> spaceship.exe
+##         '--> warp -----o===> spaceship.exe
 ##                       /
 ##         navigation --'
 ##
@@ -17,7 +17,7 @@
 ## $ ninja
 ## $ ninja install
 ## $ rm CMakeCache.txt
-## $ cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX} ../display_lib
+## $ cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX} ../warp_lib
 ## $ ninja
 ## $ ninja install
 ## $ rm CMakeCache.txt
@@ -53,7 +53,7 @@ project(Spaceship VERSION 1.0.1 DESCRIPTION "my spaceship builder")
 ## set PROJECT_NAME, PROJECT_VERSION and PROJECT_DESCRIPTION
 
 add_subdirectory(capacitor_lib)
-add_subdirectory(display_lib)
+add_subdirectory(warp_lib)
 add_subdirectory(navigation_lib)
 
 
@@ -69,8 +69,8 @@ include_directories("${PROJECT_BINARY_DIR}/include") # TODO rm ?
 
 ## link libraries .a or .so
 target_link_libraries(spaceship.exe
-  libcapacitor 
-  libdisplay
+  libcapacitor
+  libwarp
   libnavigation
 )
 

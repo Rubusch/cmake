@@ -2,7 +2,7 @@
  */
 
 #include "capacitor.h"
-#include "display.h"
+#include "warp.h"
 #include "navigation.h"
 
 #include <iostream>
@@ -13,7 +13,7 @@ using namespace std;
 int main()
 {
   auto capacitor = new Capacitor();
-  auto screen = new Display();
+  auto screen = new Warp();
   auto radar = new Navigation();
 
   delete capacitor;

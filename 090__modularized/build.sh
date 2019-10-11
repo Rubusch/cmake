@@ -18,20 +18,26 @@ test -d "${WHERE}/build" && rm -rf "${WHERE}/build"
 mkdir "${WHERE}/build"
 pushd $WHERE/build &> /dev/null
 export PREFIX="$(pwd)"
-cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX} ..
-ninja
-ninja install
+
+
+##
+# cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} ..
+# make
+# make install
+
+
+##
+# cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX} ..
+# ninja
+# ninja install
 
 
 ## build piece by piece...
-# mkdir "${WHERE}/build"
-# pushd $WHERE/build &> /dev/null
-# export PREFIX="$(pwd)"
 # cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX} ../capacitor_lib
 # ninja
 # ninja install
 # rm CMakeCache.txt
-# cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX} ../display_lib
+# cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX} ../warp_lib
 # ninja
 # ninja install
 # rm CMakeCache.txt
@@ -42,6 +48,25 @@ ninja install
 # cmake -GNinja -DCMAKE_INSTALL_PREFIX=${PREFIX} ..
 # ninja
 # ninja install
+
+
+## build piece by piece...
+cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} ../capacitor_lib
+make
+make install
+rm CMakeCache.txt
+cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} ../warp_lib
+make
+make install
+rm CMakeCache.txt
+cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} ../navigation_lib
+make
+make install
+rm CMakeCache.txt
+cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} ..
+make
+make install
+
 
 ./bin/spaceship.exe
 
