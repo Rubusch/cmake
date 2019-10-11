@@ -1,0 +1,2 @@
+## -DCMAKE_TOOLCHAIN_FILE=${CMAKE_CONFIG}/toolchain.cmake
+set(BUILD_SHARED_LIBS ON)
