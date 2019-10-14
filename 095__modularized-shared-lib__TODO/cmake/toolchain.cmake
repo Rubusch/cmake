@@ -16,6 +16,10 @@ set_property(GLOBAL PROPERTY TARGET_SUPPORTS_SHARED_LIBS TRUE)
 set(CMAKE_SHARED_LIBRARY_PREFIX "")
 set(CMAKE_SHARED_LIBRARY_SUFFIX ".lib.so")
 
+set(CMAKE_SHARED_MODULE_PREFIX "")
+
+
+
 ## additional path for headers
 #list(APPEND SYSTEM_INCLUDE_DIRS "${BASE_DIR}/.../include")
 #include_directories(SYSTEM ${SYSTEM_INCLUDE_DIRS})
