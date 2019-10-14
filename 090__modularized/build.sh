@@ -37,7 +37,7 @@ popd &> /dev/null
 
 sleep 1
 
-## build bottom up...
+## build bottom up
 test -d "${WHERE}/build" && rm -rf "${WHERE}/build"
 mkdir "${WHERE}/build"
 pushd $WHERE/build &> /dev/null
