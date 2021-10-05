@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/sh -e
 rm -rf build
 mkdir -p build
 cd build
